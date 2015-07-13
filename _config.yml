@@ -39,6 +39,9 @@ menu:
   - title:        About
     url:          /about
 
+  - title:        Data
+    url:          /data
+
 copyright:
   author:         J Nicolas Schrading
   url:            https://nschrading.github.io/
