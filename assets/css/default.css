@@ -100,31 +100,22 @@ h3 {
 	background-repeat: no-repeat;
 	position: absolute;
 	border-radius: 50%;
-	transition-duration: .25s;
+	transition-duration: .75s;
 	z-index: 1;
 }
 
 .site-icon-home {
-	width: 150px;
-	height: 150px;
-	background-size: 150px;
-	margin: -75px 0 0 -75px;
-	opacity: .9;
+	width: 275px;
+	height: 275px;
+	margin: -150px 0 0 -125px;
 }
 
 .site-icon-home:hover {
-	width: 160px;
-	height: 160px;
-	background-size: 160px;
-	margin: -80px 0 0 -80px;
-	opacity: 1;
-}
-
-.site-icon-page {
-	width: 100px;
-	height: 100px;
-	background-size: 100px;
-	margin: -120px 0 0 -50px;
+	border-radius:100px;
+    border:15px solid #001F7C;
+    width:500;
+    height:500;
+	margin: -266px 0 0 -250px;
 }
 
 .site-icon-small {
