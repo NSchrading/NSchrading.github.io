@@ -20,7 +20,6 @@ author:
 paginate:         5
 
 # Custom vars
-icon:             /assets/images/icon.png
 cover:            /assets/images/earthrise.png
 
 social:
