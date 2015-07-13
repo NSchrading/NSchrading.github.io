@@ -5,17 +5,17 @@ highlighter:    pygments
 permalink:	/project/:title
 
 # Setup
-title:            Nic Schrading
+title:            NSchrading
 tagline:          "Nic Schrading's personal website."
 description:      'A place to get information on all things Nic Schrading.'
-url:              nicschrading.com
+url:              https://www.nicschrading.com/
 baseurl:          
 commentsystem:    google
 disqus:           example
 
 author:
   name:           J Nicolas Schrading
-  url:            nicschrading.com
+  url:            https://www.nicschrading.com/
 
 paginate:         5
 
