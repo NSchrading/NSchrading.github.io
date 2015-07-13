@@ -5,17 +5,17 @@ highlighter:    pygments
 permalink:	/project/:title
 
 # Setup
-title:            NSchrading
+title:            Nic Schrading
 tagline:          "Nic Schrading's personal website."
 description:      'A place to get information on all things Nic Schrading.'
-url:              https://nicschrading.com
+url:              nicschrading.com
 baseurl:          
 commentsystem:    google
 disqus:           example
 
 author:
   name:           J Nicolas Schrading
-  url:            https://nicschrading.com
+  url:            nicschrading.com
 
 paginate:         5
 
@@ -47,7 +47,7 @@ menu:
 
 copyright:
   author:         J Nicolas Schrading
-  url:            https://nicschrading.com
+  url:            nicschrading.com
   type_title:     Some rights reserved
   type_url:       http://creativecommons.org/licenses/by-nc/2.5
 
