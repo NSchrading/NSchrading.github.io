@@ -1,61 +1,55 @@
 # Dependencies
 markdown:	kramdown
+highlighter:	pygments
+
 # Permalinks
 permalink:	/blog/:title
 
 # Setup
-title:            Thinny
-tagline:          'blog'
-description:      'My personal blog.'
-url:              http://camporez.github.io
-baseurl:          
-commentsystem:    google
-disqus:           example
+title:		Camporez
+tagline:	'blog'
+description:	'Um blog pessoal.'
+url:		http://camporez.github.io
+commentsystem:	google
+disqus:		camporez
 
 author:
-  name:           Ian Brunelli
-  url:            https://google.com/+IanCamporezBrunelli
+  name:		'Ian Camporez Brunelli'
+  url:		https://google.com/+IanCamporezBrunelli
 
-paginate:         5
+paginate:	5
 
 # Custom vars
-icon:             /assets/images/icon.png
-cover:            /assets/images/cover.jpg
+icon:		/assets/images/icon2.png
+cover:		/assets/images/cover.jpg
 
 social:
-  - icon:         twitter
-    url:          https://twitter.com/iancamporez
-    desc:         Follow me on twitter
+  - icon:	twitter
+    url:	https://twitter.com/iancamporez
+    desc:	Siga-me no twitter
 
-  - icon:         github
-    url:          https://github.com/camporez
-    desc:         Fork me on github
+  - icon:	github
+    url:	https://github.com/camporez
+    desc:	Acesse meu github
 
-  - icon:         googleplus-alt
-    url:          https://google.com/+IanCamporezBrunelli
-    desc:         Add me on google+
+  - icon:	googleplus-alt
+    url:	https://google.com/+IanCamporezBrunelli
+    desc:	Me adicione ao google+
 
-  - icon:         feed
-    url:          http://camporez.github.io/atom.xml
-    desc:         Subscribe to my feed
-
+  - icon:	feed
+    url:	http://camporez.github.io/atom.xml
+    desc:	Inscreva-se no meu feed
+    
 menu:
-  - title:        Home
-    url:          /
+  - title:	Início
+    url:	/
+    
+  - title:	Sobre
+    url:	/sobre
 
-  - title:        About
-    url:          /about
 
 copyright:
-  author:         Camporez
-  url:            http://camporez.github.io
-  type_title:     Some rights reserved
-  type_url:       http://creativecommons.org/licenses/by-nc/2.5
-
-parallax:         false
-
-# Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
-google_analytics:  
-
-# Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
-theme_color:       7E9576
+  author:	Camporez
+  url:		http://camporez.github.io
+  type_title:	Alguns direitos reservados
+  type_url:	http://creativecommons.org/licenses/by-nc/2.5/br
