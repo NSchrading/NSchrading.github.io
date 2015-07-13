@@ -2,7 +2,7 @@
 markdown:	kramdown
 highlighter:    pygments
 # Permalinks
-permalink:	/blog/:title
+permalink:	/project/:title
 
 # Setup
 title:            NSchrading
