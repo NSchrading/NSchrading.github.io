@@ -21,7 +21,7 @@ paginate:         5
 
 # Custom vars
 icon:             /assets/images/icon.png
-cover:            /assets/images/earthrise.jpg
+cover:            /assets/images/earthrise.png
 
 social:
   - icon:         twitter
