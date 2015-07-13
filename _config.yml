@@ -26,11 +26,15 @@ cover:            /assets/images/earthrise.png
 social:
   - icon:         twitter
     url:          https://twitter.com/nschrading
-    desc:         Follow me on twitter
+    desc:         Follow me on Twitter
 
   - icon:         github
     url:          https://github.com/nschrading
-    desc:         Fork me on github
+    desc:         Fork me on GitHub
+
+  - icon:         linkedin
+    url:          https://www.linkedin.com/pub/j-nicolas-schrading/65/56b/b19
+    desc:         Connect with me on LinkedIn
 
 menu:
   - title:        Home
@@ -51,7 +55,7 @@ copyright:
 parallax:         false
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
-google_analytics:  
+google_analytics:  UA-65114006-1
 
 # Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
 theme_color:       7E9576
