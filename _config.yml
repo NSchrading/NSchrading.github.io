@@ -57,4 +57,4 @@ parallax:         false
 google_analytics:  UA-65114006-1
 
 # Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
-theme_color:       7E9576
+theme_color:       001F7C
