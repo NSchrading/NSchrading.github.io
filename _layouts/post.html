@@ -3,7 +3,7 @@ layout: default
 article: true
 ---
 
-<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+<header class="{% if page.dark %}dark{% else %}clean{% endif %}" style="background-image: url({% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}); height: 100%; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
 	{% if page.video %}
 		<video id="bg-video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0" data-stellar-ratio="0.5">
 		{% for format in page.video %}
@@ -17,14 +17,14 @@ article: true
 		{% if page.quote %}
 			<h2>{{ page.quote }}</h2>
 		{% endif %}
-		<a class="site-title" href="{{ site.url }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, em {{ page.date | date: "%-d de "}}{% assign m = page.date | date: "%-m" %}{% case m %}{% when '1' %}janeiro{% when '2' %}fevereiro{% when '3' %}março{% when '4' %}abril{% when '5' %}maio{% when '6' %}junho{% when '7' %}julho{% when '8' %}agosto{% when '9' %}setembro{% when '10' %}outubro{% when '11' %}novembro{% when '12' %}dezembro{% endcase %}{{ page.date | date: " de %Y" }}
+		<a class="site-title" href="{{ site.url }}{{ site.baseurl }}"><div class="site-icon-small" style="background-image: url({{ site.icon }});"></div>{{ site.title }}</a>, in {{ page.date | date_to_long_string }}
 	</div>
 	{% if page.image.source %}
 	<div id="img-info" data-stellar-ratio="0.5">
-		<a href="{{ page.image.source }}" target="_blank" title="Fonte {% if page.video %}do vídeo{% else %}da imagem{% endif %}"><span class="genericon genericon-link"></span></a>
+		<a href="{{ page.image.source }}" target="_blank" title="{% if page.video %}Vídeo{% else %}Image{% endif %} Source"><span class="genericon genericon-link"></span></a>
 	</div>
 	{% endif %}
-	<div id="nav-icon" style="bottom: 30px;" data-stellar-ratio="0.5">
+	<div id="nav-icon" style="bottom: 30px;" data-stellar-ratio="4">
 		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-expand"></span></a>
 	</div>
 </header>
@@ -40,22 +40,25 @@ article: true
 </div>
 {% if page.next %}
 	{% capture footer_style %}{% if page.next.dark %}dark{% else %}clean{% endif %}{% endcapture %}
-	{% capture footer_image %}{% if page.next.image.url %}{{ page.next.image.url }}{% else %}{{ site.cover }}{% endif %}{% endcapture %}
-	{% capture footer_message %}Leia a seguir{% endcapture %}
-	{% capture footer_url %}{{ page.next.url }}{% endcapture %}
+	{% capture footer_image %}{% if page.next.image.url %}{{ site.baseurl }}{{ page.next.image.url }}{% else %}{{ site.cover }}{% endif %}{% endcapture %}
+	{% capture footer_message %}Read next{% endcapture %}
+	{% capture footer_url %}{{ site.baseurl }}{{ page.next.url }}{% endcapture %}
 	{% capture footer_title %}{{ page.next.title }}{% endcapture %}
 	{% capture footer_quote %}{{ page.next.quote }}{% endcapture %}
 {% else %}
 	{% for post in site.related_posts limit:1 %}
 		{% capture footer_style %}{% if post.dark %}dark{% else %}clean{% endif %}{% endcapture %}
-		{% capture footer_image %}{% if post.image.url %}{{ post.image.url }}{% else %}{{ site.cover }}{% endif %}{% endcapture %}
-		{% capture footer_message %}Em destaque{% endcapture %}
-		{% capture footer_url %}{{ post.url }}{% endcapture %}
+		{% capture footer_image %}{% if post.image.url %}{{ site.baseurl }}{{ post.image.url }}{% else %}{{ site.cover }}{% endif %}{% endcapture %}
+		{% capture footer_message %}Featured post{% endcapture %}
+		{% capture footer_url %}{{ site.baseurl }}{{ post.url }}{% endcapture %}
 		{% capture footer_title %}{{ post.title }}{% endcapture %}
 		{% capture footer_quote %}{{ post.quote }}{% endcapture %}
 	{% endfor %}
 {% endif %}
-<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 75%; min-height: 500px;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
+{% unless footer_style %}
+	{% capture footer_style %}{% if page.dark %}dark{% else %}clean{% endif %}{% endcapture %}
+{% endunless %}
+<footer class="{{ footer_style }}" style="background-image: url({% if footer_image %}{{ footer_image }}{% else %}{{ site.cover }}{% endif %}); height: 75%; min-height: 500px; {% if site.parallax != true %}background-attachment: scroll;{% endif %}" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
 	<div id="nav-icon" style="top: 60px;" data-stellar-ratio="0.8">
 		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-collapse"></span></a>
 	</div>
@@ -70,4 +73,4 @@ article: true
 	</div>
 	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
 </footer>
-<script src="/assets/js/smooth-scroll.js"></script>
+<script src="{{ site.baseurl }}/assets/js/smooth-scroll.js"></script>
