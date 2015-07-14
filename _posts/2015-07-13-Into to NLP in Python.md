@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Into to NLP in Python"
-quote: "sdfsd"
+quote: "A simple introduction to text processing, simple natural language processing, and machine learning in Python using NLTK and Scikit-learn."
 image:
     url:
-    source: me
+    source:
 video: false
 comments: false
 ---
