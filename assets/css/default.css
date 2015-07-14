@@ -202,8 +202,7 @@ h3 {
 }
 
 
-#article-img, #article video {
-	border-radius: 3px;
+#article img, #article video {
 	max-width: 100%;
 	height: auto;
     width: auto\9; /* ie8 */
