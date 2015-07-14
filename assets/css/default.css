@@ -202,7 +202,7 @@ h3 {
 }
 
 
-#article-img, #article video {
+#article img, #article video {
 	border-radius: 3px;
 	max-width: 100%;
 	height: auto;
