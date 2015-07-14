@@ -13,6 +13,8 @@ comments: false
 
 You can access the Ipython notebook code [here](https://github.com/NSchrading/intro-python-nlp). This is intended to be run in an Ipython notebook, but the code can be copied and pasted into a python interpreter and it should work as well. Follow the readme on the github page above to get the dependencies required to run this code.
 
+This tutorial is intended as a way for people with some experience with the concepts of machine learning and natural language processing to get started doing experiments in Python. If you are a complete beginner, you may be confused about terms like [tokenization](https://en.wikipedia.org/wiki/Tokenization_%28lexical_analysis%29), [stoplisting](https://en.wikipedia.org/wiki/Stop_words), [lemmatization](https://en.wikipedia.org/wiki/Lemmatization), and [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine). For a good introduction to machine learning, take Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning/home/info). 
+
 # Basic Text Processing in Python
 
 {% highlight python %}
