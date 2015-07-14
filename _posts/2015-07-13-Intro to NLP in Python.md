@@ -1,13 +1,17 @@
 ---
 layout: post
-title: "Into to NLP in Python"
-quote: "A simple introduction to text processing, simple natural language processing, and machine learning in Python using NLTK and Scikit-learn."
+title: "Intro to NLP in Python"
+quote: "A simple introduction to text processing, basic natural language processing, and machine learning in Python using NLTK and Scikit-learn."
 image:
     url:
     source:
 video: false
 comments: false
 ---
+
+# Note
+
+You can access the Ipython notebook code [here](https://github.com/NSchrading/intro-python-nlp). This is intended to be run in an Ipython notebook, but the code can be copied and pasted into a python interpreter and it should work as well. Follow the readme on the github page above to get the dependencies required to run this code.
 
 # Basic Text Processing in Python
 
