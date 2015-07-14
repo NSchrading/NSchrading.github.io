@@ -16,6 +16,7 @@ disqus:           example
 author:
   name:           J Nicolas Schrading
   url:            https://nicschrading.com/
+  pic:            /assets/images/me.jpg
 
 paginate:         5
 
