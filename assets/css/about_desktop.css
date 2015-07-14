@@ -229,3 +229,7 @@ section h3.section-subheading {
     left: 50%;
     margin-left: -450px;
 }
+
+#article-img {
+    margin-left: 150px;
+}

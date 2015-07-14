@@ -1,2 +1,2 @@
-<div id="article-img" > <a href="{{ site.baseurl }}{{ include.url }}" target="_blank"><img src="{{ site.baseurl }}{{ include.url }}" alt="{{ include.description }}"{% if include.width %} width="{{ include.width }}"{% endif %} /></a>
+<div id="article-img" > <a href="{{ site.baseurl }}{{ include.url }}" target="_blank"><img src="{{ site.baseurl }}{{ include.url }}" alt="{{ include.description }}"{% if include.width %} width="{{ include.width }}" margin-left={{ include.margin-left }}{% endif %} /></a>
 {%if include.description %}<div class="message">{{ include.description }}</div>{% endif %}</div>
