@@ -231,5 +231,5 @@ section h3.section-subheading {
 }
 
 #article-img {
-    margin-left: 150px;
+    max-width:65% !important;
 }

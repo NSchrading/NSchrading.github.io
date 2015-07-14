@@ -208,8 +208,14 @@ h3 {
     width: auto\9; /* ie8 */
 }
 
-#article-img a, #article-img a:hover {
+#article-img-container a, #article-img-container a:hover {
 	border-bottom: 0px;
+}
+
+#article-img {
+	display: block;
+	margin: auto;
+	border-radius: 3px;
 }
 
 a.site-title:hover, .copyright a:hover {
