@@ -37,13 +37,13 @@ social:
     desc:         Connect with me on LinkedIn
 
 menu:
-  - title:        Home
+  - title:        Projects
     url:          /
 
   - title:        About
     url:          /about
 
-  - title:        Data
+  - title:        Research Data
     url:          /data
 
 copyright:
