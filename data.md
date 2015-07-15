@@ -59,6 +59,59 @@ a {
 
 </style>
 
+<style media="screen" type="text/css" media="only screen and (max-width: 899px)">
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #ECF0F1;
+}
+
+.navbar-nav > li > a {
+    line-height: 21px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+}
+
+.navbar-nav {
+    margin: 0px;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px;
+}
+
+.navbar-right {
+    float: right !important;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline-offset: -2px;
+}
+
+a {
+    background: transparent none repeat scroll 0% 0%;
+    color: #2A7EAD;
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+</style>
+
 <div class="container">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div>
