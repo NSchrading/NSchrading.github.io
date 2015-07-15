@@ -55,6 +55,7 @@ a {
     width: 900px;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 40px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -104,6 +105,7 @@ a {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
+    padding-bottom: 40px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -126,8 +128,6 @@ a {
         </ul>
     </div>
 </div>
-
-<br><br>
 
 This page contains links to data I have collected for my thesis. You are welcome to use any of this data for your research, but please cite the relevant paper and follow the [terms of use](#terms) if you do so.
 
