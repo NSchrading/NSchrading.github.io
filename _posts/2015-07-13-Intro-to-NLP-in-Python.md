@@ -3,8 +3,8 @@ layout: post
 title: "Intro to NLP in Python"
 quote: "A simple introduction to text processing, basic natural language processing, and machine learning in Python using NLTK and Scikit-learn."
 image:
-    url:
-    source:
+    url: /media/2015-07-13-Intro-to-NLP-in-Python/nlp.jpg
+    source: https://d13pix9kaak6wt.cloudfront.net/background/thboegel_1349550416_33.jpg
 video: false
 comments: false
 ---
@@ -13,7 +13,9 @@ comments: false
 
 You can access the Ipython notebook code [here](https://github.com/NSchrading/intro-python-nlp). This is intended to be run in an Ipython notebook, but the code can be copied and pasted into a python interpreter and it should work as well. Follow the readme on the github page above to get the dependencies required to run this code.
 
-This tutorial is intended as a way for people with some experience with the concepts of machine learning and natural language processing to get started doing experiments in Python. If you are a complete beginner, you may be confused about terms like [tokenization](https://en.wikipedia.org/wiki/Tokenization_%28lexical_analysis%29), [stoplisting](https://en.wikipedia.org/wiki/Stop_words), [lemmatization](https://en.wikipedia.org/wiki/Lemmatization), and [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine). For a good introduction to machine learning, take Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning/home/info). 
+This tutorial is intended as a way for people with some experience with the concepts of machine learning and natural language processing to get started doing experiments in Python. If you are a complete beginner, you may be confused about terms like [tokenization](https://en.wikipedia.org/wiki/Tokenization_%28lexical_analysis%29), [stoplisting](https://en.wikipedia.org/wiki/Stop_words), [lemmatization](https://en.wikipedia.org/wiki/Lemmatization), and [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine). For a good introduction to machine learning, take Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning/home/info). For a more in-depth introduction to NLP in Python see [NLTK's book](http://www.nltk.org/book/). 
+
+NLTK is not the best tool for serious NLP. It is primarily a learning resource. For an excellent production-ready NLP tool see [spaCy](https://honnibal.github.io/spaCy/). I have written a tutorial for spaCy natural language processing [here]({{ site.url }}{{ site.baseurl }}project/Intro-to-NLP-with-spaCy/).
 
 # Basic Text Processing in Python
 
@@ -170,7 +172,7 @@ ascii-codec-cant-decode-byte?answertab=oldest#tab-top) to understand the problem
 Typically these problems crop up when you get text from the internet which could
 contain weird symbols in some crazy encoding.
 
-# Regular Expressions are Super Helpful if You Work on Text
+# [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) are Super Helpful if You Work on Text
 
 {% highlight python %}
 
