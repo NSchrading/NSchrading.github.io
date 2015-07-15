@@ -72,6 +72,7 @@ a {
 .nav > li > a {
     position: relative;
     display: block;
+    padding: 10px 15px;
 }
 
 .navbar-nav {
@@ -86,10 +87,6 @@ a {
 
 .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
-}
-
-.navbar-right {
-    float: right !important;
 }
 
 a:focus {
