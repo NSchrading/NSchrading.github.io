@@ -12,6 +12,8 @@ permalink: data/
 
 .navbar-nav > li > a {
     line-height: 21px;
+    padding-top: 19.5px;
+    padding-bottom: 19.5px;
 }
 
 .nav > li > a {
@@ -67,6 +69,8 @@ a {
 
 .navbar-nav > li > a {
     line-height: 21px;
+    padding-top: 19.5px;
+    padding-bottom: 19.5px;
 }
 
 .nav > li > a {
@@ -123,7 +127,7 @@ a {
     </div>
 </div>
 
-<br>
+<br><br>
 
 This page contains links to data I have collected for my thesis. You are welcome to use any of this data for your research, but please cite the relevant paper and follow the [terms of use](#terms) if you do so.
 
