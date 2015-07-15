@@ -77,7 +77,7 @@ a {
 .nav > li > a {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 5px;
 }
 
 .navbar-nav {
@@ -105,7 +105,7 @@ a {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
-    padding-bottom: 100px;
+    padding-bottom: 110px;
     margin-right: auto;
     margin-left: auto;
 }
