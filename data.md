@@ -4,21 +4,13 @@ title: Research Data
 permalink: data/
 ---
 
-<style media="screen" type="text/css">
+<style media="screen" type="text/css" media="only screen and (min-width: 900px)">
 
 .nav > li > a:hover, .nav > li > a:focus {
-    text-decoration: none;
     background-color: #ECF0F1;
 }
 
 .navbar-nav > li > a {
-    padding-top: 19.5px;
-    padding-bottom: 19.5px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
     line-height: 21px;
 }
 
@@ -29,7 +21,6 @@ permalink: data/
 }
 
 .navbar-nav {
-    float: left;
     margin: 0px;
 }
 
@@ -47,11 +38,6 @@ permalink: data/
     float: right !important;
 }
 
-
-.nav {
-    list-style: outside none none;
-}
-
 a:focus {
     outline: thin dotted;
     outline-offset: -2px;
@@ -59,15 +45,8 @@ a:focus {
 
 a {
     background: transparent none repeat scroll 0% 0%;
-}
-
-a {
     color: #2A7EAD;
     text-decoration: none;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 .container {
@@ -88,7 +67,10 @@ a {
                 <a class="scroll" data-speed="500" href="#twitter">#WhyIStayed / #WhyILeft</a>
             </li>
             <li>
-                <a class="scroll" data-speed="500" href="#reddit">Reddit Abuse</a>
+                <a class="scroll" data-speed="500" href="#reddit">Reddit Domestic Abuse</a>
+            </li>
+            <li>
+                <a class="scroll" data-speed="500" href="#terms">Terms of Use</a>
             </li>
         </ul>
     </div>
@@ -96,24 +78,7 @@ a {
 
 <br>
 
-This page contains links to data I have collected for my thesis. You are welcome to use any of this data for your research, but please cite the relevant paper if you do so :)
-
-Twitter paper:
-    
-[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](anthology.aclweb.org/N/N15/N15-1139.pdf)
-
-    @InProceedings{schrading-EtAl:2015:NAACL-HLT,
-      author    = {Schrading, Nicolas  and  Ovesdotter Alm, Cecilia  and  Ptucha, Raymond  and  Homan, Christopher},
-      title     = {\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse},
-      booktitle = {Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
-      month     = {May--June},
-      year      = {2015},
-      address   = {Denver, Colorado},
-      publisher = {Association for Computational Linguistics},
-      pages     = {1281--1286},
-      url       = {http://www.aclweb.org/anthology/N15-1139}
-    }
-
+This page contains links to data I have collected for my thesis. You are welcome to use any of this data for your research, but please cite the relevant paper and follow the [terms of use](#terms) if you do so.
 
 <section id="twitter"></section>
 
@@ -227,9 +192,9 @@ Not every sample actually contains a reason for staying or leaving. Some may be 
 
 <section id="reddit"></section>
 
-# Reddit Abuse Research Data
+# Reddit Domestic Abuse Research Data
 
-This data was used to create a general classifier to find text describing abuse. Analysis of this data can reveal the general dynamics of abuse, and can be used to study how online users discuss abuse. Discourse studies between submitters and commenters could be a very interesting experiment to conduct. Other studies on relationships and advice seeking behavior on Reddit could also be conducted. The following subreddits were collected from:
+This data was used to create a general classifier to find text describing domestic abuse. Analysis of this data can reveal the general dynamics of domestic abuse, and can be used to study how online users discuss abuse. Discourse studies between submitters and commenters could be a very interesting experiment to conduct. Other studies on relationships and advice seeking behavior on Reddit could also be conducted. The following subreddits were collected from:
 
 |                     | abuseinterrupted | domesticviolence | survivorsofabuse | casualconversation | advice    | anxiety   | anger     |
 |-------------------- | ---------------- | ---------------- | ---------------- | ------------------ | --------- | --------- | --------- |
@@ -291,3 +256,24 @@ All data in this study is contained in a sqlite database named "new_reddit.db". 
 * ***end*** - The end index of the text slice.
 * ***predicate_sense_num*** - The sense number of the predicate as determined by the [Illinois Curator](http://cogcomp.cs.illinois.edu/page/software_view/Curator).
 
+<section id="terms"></section>
+
+# Terms of Use
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+Twitter paper:
+    
+[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](anthology.aclweb.org/N/N15/N15-1139.pdf)
+
+    @InProceedings{schrading-EtAl:2015:NAACL-HLT,
+      author    = {Schrading, Nicolas  and  Ovesdotter Alm, Cecilia  and  Ptucha, Raymond  and  Homan, Christopher},
+      title     = {\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse},
+      booktitle = {Proceedings of the 2015 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+      month     = {May--June},
+      year      = {2015},
+      address   = {Denver, Colorado},
+      publisher = {Association for Computational Linguistics},
+      pages     = {1281--1286},
+      url       = {http://www.aclweb.org/anthology/N15-1139}
+    }
