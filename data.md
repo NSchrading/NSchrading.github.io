@@ -315,7 +315,7 @@ All data in this study is contained in a sqlite database named "new_reddit.db". 
 
 Twitter paper:
     
-[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](anthology.aclweb.org/N/N15/N15-1139.pdf)
+[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](http://anthology.aclweb.org/N/N15/N15-1139.pdf)
 
     @InProceedings{schrading-EtAl:2015:NAACL-HLT,
       author    = {Schrading, Nicolas  and  Ovesdotter Alm, Cecilia  and  Ptucha, Raymond  and  Homan, Christopher},
