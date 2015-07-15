@@ -105,7 +105,7 @@ a {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
-    padding-bottom: 110px;
+    padding-bottom: 120px;
     margin-right: auto;
     margin-left: auto;
 }
