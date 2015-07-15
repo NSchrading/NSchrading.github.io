@@ -85,10 +85,6 @@ a {
     float: left;
 }
 
-.navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-}
-
 a:focus {
     outline: thin dotted;
     outline-offset: -2px;
@@ -101,6 +97,7 @@ a {
 }
 
 .container {
+    width: 100%;
     padding-left: 0px;
     padding-right: 0px;
     margin-right: auto;
