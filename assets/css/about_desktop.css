@@ -233,3 +233,7 @@ section h3.section-subheading {
 #article-img {
     max-width:65% !important;
 }
+
+.menu, .menu-content {
+    box-sizing: content-box !important;
+}

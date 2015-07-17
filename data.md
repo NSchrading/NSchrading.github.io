@@ -139,7 +139,7 @@ In September 2014, Twitter users unequivocally reacted to the Ray Rice assault s
 
 ### Download
 
-Download this data from my public dropbox [here](https://www.dropbox.com/s/n4fp4sq572422ex/stayedLeftData.json.7z?dl=0).
+Download this data from my public dropbox [here](https://www.dropbox.com/s/n4fp4sq572422ex/stayedLeftData.json.7z?dl=0){:target="_blank"}.
 
 ### Format
 Twitter restricts public sharing of tweets to only tweet ids. Therefore the format of the data is as follows:
@@ -155,10 +155,10 @@ Twitter restricts public sharing of tweets to only tweet ids. Therefore the form
 
 ### Getting the tweet text and additional information using Twitter's API
 
-In order to gather the tweet text and additional information about the tweet, like user information and retweet count, you must use Twitter's API. I would recommend using the [GET statuses/lookup](https://dev.twitter.com/rest/reference/get/statuses/lookup) API call because it allows you to look up 100 tweet ids at a time in bulk. Provided below is Python code to do this, using [Twython](https://github.com/ryanmcgrath/twython) as a wrapper for Twitter's API.
+In order to gather the tweet text and additional information about the tweet, like user information and retweet count, you must use Twitter's API. I would recommend using the [GET statuses/lookup](https://dev.twitter.com/rest/reference/get/statuses/lookup){:target="_blank"} API call because it allows you to look up 100 tweet ids at a time in bulk. Provided below is Python code to do this, using [Twython](https://github.com/ryanmcgrath/twython){:target="_blank"} as a wrapper for Twitter's API.
 
 #### Important
-To use this code, you ***must*** have Twython installed. Installation instructions, and how to set up a Twitter API account are on [Twython's githup page](https://github.com/ryanmcgrath/twython).
+To use this code, you ***must*** have Twython installed. Installation instructions, and how to set up a Twitter API account are on [Twython's githup page](https://github.com/ryanmcgrath/twython){:target="_blank"}.
 
 If you use this code, the text provided (Tweet.text) will still have hashtags, and is uncleaned. You will want to remove hashtags, and probably do standard cleaning procedures like lowercasing, lemmatizing, and stoplisting.
 
@@ -261,11 +261,14 @@ Additionally, the following subreddits were collected from and used as a held ou
 
 ### Download
 
-Download this data from my public dropbox [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0).
+Download the entire reddit database from my public dropbox [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0){:target="_blank"}.
+Download the "shelved" sets of reddit data from my public dropbox [here](https://www.dropbox.com/s/zsncys6m2hhqpi9/reddit_data_shelves.7z?dl=0){:target="_blank"}.
 
 ### Format
 
-All data in this study is contained in a sqlite database named "new_reddit.db". There are 3 tables within this database: ***submissions***, ***comments***, and ***submission_srls***. Their columns are as follows:
+There are two formats for the Reddit data. The most flexible for researchers is the entire database used to store all the data I collected. You will have to use sqlite to access the database ([Python has an API](https://docs.python.org/2/library/sqlite3.html){:target="_blank"} for interacting with sqlite databases). For those who do not wish to interact with the database and simply want to access the datasets used in my experiments, I have provided [shelved](https://docs.python.org/2/library/shelve.html){:target="_blank"} data files for use in Python.
+
+The sqlite database named "new_reddit.db" has 3 tables within: ***submissions***, ***comments***, and ***submission_srls***. Their columns are as follows:
 
 #### Submissions table
 
@@ -279,7 +282,7 @@ All data in this study is contained in a sqlite database named "new_reddit.db". 
 * ***num_comments*** - The number of comments within the submission.
 * ***created_utc*** - The UTC time at which the submission was created.
 * ***link_flair*** - Any special flair that the user or moderators applied to this submission. Can be None or blank.
-* ***sentiment*** - The overall sentiment of the submission as calculated by [VADER](https://github.com/cjhutto/vaderSentiment).
+* ***sentiment*** - The overall sentiment of the submission as calculated by [VADER](https://github.com/cjhutto/vaderSentiment){:target="_blank"}.
 
 #### Comments table
 
@@ -295,17 +298,43 @@ All data in this study is contained in a sqlite database named "new_reddit.db". 
 * ***created_utc*** - The UTC time at which the submission was created.
 * ***sim_score*** - The cosine similarity of the comment's text to the submission's text.
 * ***label*** - Some comments may have been labeled as abuse or non_abuse in experiments. If they were, this is their label as assigned by a classifier. May be incorrect, and should not be considered ground truth.
-* ***sentiment*** - The overall sentiment of the comment as calculated by [VADER](https://github.com/cjhutto/vaderSentiment).
+* ***sentiment*** - The overall sentiment of the comment as calculated by [VADER](https://github.com/cjhutto/vaderSentiment){:target="_blank"}.
 
 #### Submission_srls table
 
 * ***submission_id*** - The unique identifier of the submission that the semantic role exists within. Can be accessed online by going to http://www.reddit.com/{id}, where {id} is the id of the submission.
-* ***role*** - The label of the semantic role as provided by [PropBank](http://verbs.colorado.edu/~mpalmer/projects/ace.html).
+* ***role*** - The label of the semantic role as provided by [PropBank](http://verbs.colorado.edu/~mpalmer/projects/ace.html){:target="_blank"}.
 * ***predicate*** - The predicate that the semantic role is associated with.
 * ***text_slice*** - The text that the role is associated with.
 * ***start*** - The start index of the text slice.
 * ***end*** - The end index of the text slice.
-* ***predicate_sense_num*** - The sense number of the predicate as determined by the [Illinois Curator](http://cogcomp.cs.illinois.edu/page/software_view/Curator).
+* ***predicate_sense_num*** - The sense number of the predicate as determined by the [Illinois Curator](http://cogcomp.cs.illinois.edu/page/software_view/Curator){:target="_blank"}.
+
+The shelved files provided are as follows (note that lists are aligned e.g. submissionId lists align with the submissions in data lists):
+
+* ***redditAbuseSubmissions*** This data is an even set of 552 abuse submissions and 552 non-abuse submissions. Each submission has been parsed by the Illinois Curator for Semantic Role Labels. It has the variables:
+    * data: A list of submission titles and text concatenated, 1 entry per submission.
+    * labels: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * subIds: A list of reddit submission ids, 1 entry per submission.
+    * roles: A list of lists. Each inner list has the semantic role labels in a submission. 1 list per submission.
+    * predicates: A list of lists. Each inner list is a tuple of (predicates, sense number) in a submission. 1 list per submission.
+* ***redditAbuseComments*** This data contains all the comments within the submissions in the small even set of submissions. It has the variables:
+    * commData: A dictionary, where the key is a reddit submission id and the value is a list of comments in that submission.
+    * commLabels: A dictionary, where the key is a reddit submission id and the value is a list of labels given to the comments (abuse or non_abuse)
+* ***redditAbuseOnlyNgrams*** This data contains a larger set of even data (1336 submissions per class), with no semantic roles or predicates. It has the variables:
+    * data: A list of submission titles and text concatenated, 1 entry per submission.
+    * labels: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * subIds: A list of reddit submission ids, 1 entry per submission.
+* ***redditAbuseUneven*** This data is an uneven set of data with 1336 abuse submissions and 17020 non-abuse submissions. It has the variables:
+    * XTrain: A list of submission title, text, and comment data concatenated together, 85% training size.
+    * XTest: A list of submission title, text, and comment data concatenated together, 15% testing size.
+    * labelsTrain: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * labelsTest: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * subIdsTrain: A list of reddit submission ids, 1 entry per submission.
+    * subIdsTest: A list of reddit submission ids, 1 entry per submission.
+* ***redditRelationshipsData*** This data contains all relationship and relationship_advice submissions with at least 1 comment.
+    * data: A list of submission title, text, and comment data concatenated together.
+    * subIds: A list of reddit submission ids, 1 entry per submission.
 
 <section id="terms"></section>
 
