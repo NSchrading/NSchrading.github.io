@@ -24,10 +24,6 @@ paginate:         5
 cover:            /assets/images/earthrise.png
 
 social:
-  - icon:         twitter
-    url:          https://twitter.com/nschrading
-    desc:         Follow me on Twitter
-
   - icon:         github
     url:          https://github.com/nschrading
     desc:         Fork me on GitHub
@@ -35,6 +31,10 @@ social:
   - icon:         linkedin
     url:          https://www.linkedin.com/pub/j-nicolas-schrading/65/56b/b19
     desc:         Connect with me on LinkedIn
+
+  - icon:         twitter
+    url:          https://twitter.com/nschrading
+    desc:         Follow me on Twitter
 
 menu:
   - title:        Projects
@@ -45,6 +45,8 @@ menu:
 
   - title:        Research Data
     url:          /data
+
+  - home_default_open: true
 
 copyright:
   author:         J Nicolas Schrading
