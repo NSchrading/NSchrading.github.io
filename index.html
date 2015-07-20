@@ -10,6 +10,12 @@ title: Home
 	</a>
 </header>
 <div id="middle">
+
+<h1 class="homepage-header">{{ site.homepage_header }}</h1>
+<p class="homepage-text">{{ site.homepage_text }}</p>
+<br>
+
+
 <div id="post-list">
 	{% for post in paginator.posts %}
 		<div>

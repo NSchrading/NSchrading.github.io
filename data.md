@@ -340,11 +340,11 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
 
 # Terms of Use
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 Twitter paper:
     
-[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](http://anthology.aclweb.org/N/N15/N15-1139.pdf)
+[\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](http://anthology.aclweb.org/N/N15/N15-1139.pdf){:target="_blank"}
 
     @InProceedings{schrading-EtAl:2015:NAACL-HLT,
       author    = {Schrading, Nicolas  and  Ovesdotter Alm, Cecilia  and  Ptucha, Raymond  and  Homan, Christopher},

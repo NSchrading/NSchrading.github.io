@@ -544,3 +544,21 @@ pre code {
 	margin-top: 60px;
 	border-top: 1px solid #EEE;
 }
+
+.homepage-header {
+	font-weight: bold;
+	font-size: 36pt;
+	line-height: 44px;
+	margin-bottom: 8px;
+	text-align: center;
+	color: #383838;
+	margin-top: 0px;
+	padding-top: 36px;
+}
+
+.homepage-text {
+	color: #777;
+	font-size: 15pt;
+	font-family: Fenix, Georgia, "Times New Roman", serif;
+	text-align: center;
+}

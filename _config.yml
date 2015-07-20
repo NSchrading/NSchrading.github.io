@@ -13,6 +13,9 @@ baseurl:
 commentsystem:    google
 disqus:           example
 
+homepage_header:  Projects
+homepage_text:    "A selected list of projects I've worked on."
+
 author:
   name:           J Nicolas Schrading
   url:            https://nicschrading.com/
@@ -46,7 +49,9 @@ menu:
   - title:        Research Data
     url:          /data
 
-  - home_default_open: true
+  - title:        Top of Page
+    url:          "#top"
+    scroll:       true
 
 copyright:
   author:         J Nicolas Schrading
