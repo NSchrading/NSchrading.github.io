@@ -144,14 +144,14 @@ Download this data from my public dropbox [here](https://www.dropbox.com/s/n4fp4
 ### Format
 Twitter restricts public sharing of tweets to only tweet ids. Therefore the format of the data is as follows:
 
-* An individual sample is on a new line of the file.
-* Each sample is encoded as JSON.
+* An individual instance is on a new line of the file.
+* Each instance is encoded as JSON.
 * Some tweets were split into multiple parts if they contained both hashtags - one part for the \#WhyIStayed reason and one part for the \#WhyILeft reason. Only a single tweet in the dataset needed to be split into 4s, but logic handled this case as well.
-* Each sample has the properties ***id***, ***label***, ***startIdx***, and ***endIdx***
+* Each instance has the properties ***id***, ***label***, ***startIdx***, and ***endIdx***
     * ***id***: The unique identifier of the tweet.
-    * ***label***: The ground truth label this sample was given, either \#WhyIStayed or \#WhyILeft, based off of the hashtag used.
-    * ***startIdx***: If the tweet was split into multiple parts, this is the starting index into the tweet text. If the tweet was not split this is null.
-    * ***endIdx***: If the tweet was split into multiple parts, this is the index into the tweet text at which the sample ends. If the tweet was not split this is null.
+    * ***label***: The ground truth label this instance was given, either \#WhyIStayed or \#WhyILeft, based off of the hashtag used.
+    * ***startIdx***: If the tweet was split into multiple parts, this is the starting index into the tweet text related to the current label. If the tweet was not split this is null.
+    * ***endIdx***: If the tweet was split into multiple parts, this is the index into the tweet text at which the instance ends. If the tweet was not split this is null.
 
 ### Getting the tweet text and additional information using Twitter's API
 
@@ -186,7 +186,7 @@ class Tweet():
 
 def collectTwitterData(twitter):
     tweetDict = {}
-    # open the shared file and extract its data for all tweet samples
+    # open the shared file and extract its data for all tweet instances
     with open("stayedLeftData.json") as f:
         for line in f:
             data = json.loads(line)
@@ -239,7 +239,7 @@ def collectTwitterData(twitter):
 
 ### Data Cleanliness
 
-Not every sample actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. An annotation study on 1000 random samples from the data was conducted with 4 annotators. The following chart shows the resulting distribution of classes in this data:
+Not every instnace actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. An annotation study on 1000 random instances from the data was conducted with 4 annotators. The following chart shows the resulting distribution of classes in this data:
 
 ![alt text]({{ site.baseurl }}/assets/images/tweet_data.png "Class distribution in Tweet Data")
 
