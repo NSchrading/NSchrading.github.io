@@ -301,25 +301,6 @@ allWords.reverse()
 print("Top 10 most similar words to NASA:")
 for word in allWords[:10]:   
     print(word.orth_)
-    
-# Let's see if it can figure out this analogy
-# Man is to King as Woman is to ??
-king = parser.vocab['king']
-man = parser.vocab['man']
-woman = parser.vocab['woman']
-
-result = king.repvec - man.repvec + woman.repvec
-
-# gather all known words, take only the lowercased versions
-allWords = list({w for w in parser.vocab if w.has_repvec and w.orth_.islower() and w.lower_ != "king" and w.lower_ != "man" and w.lower_ != "woman"})
-# sort by similarity to the result
-allWords.sort(key=lambda w: cosine(w.repvec, result))
-allWords.reverse()
-print("\n----------------------------\nTop 3 closest results for king - man + woman:")
-for word in allWords[:3]:   
-    print(word.orth_)
-    
-# it got it! Queen!
 
 {% endhighlight %}
 
@@ -344,6 +325,30 @@ Top 10 most similar words to NASA:
 > usaid
 
 > nsf
+
+
+{% highlight python %}
+    
+# Let's see if it can figure out this analogy
+# Man is to King as Woman is to ??
+king = parser.vocab['king']
+man = parser.vocab['man']
+woman = parser.vocab['woman']
+
+result = king.repvec - man.repvec + woman.repvec
+
+# gather all known words, take only the lowercased versions
+allWords = list({w for w in parser.vocab if w.has_repvec and w.orth_.islower() and w.lower_ != "king" and w.lower_ != "man" and w.lower_ != "woman"})
+# sort by similarity to the result
+allWords.sort(key=lambda w: cosine(w.repvec, result))
+allWords.reverse()
+print("\n----------------------------\nTop 3 closest results for king - man + woman:")
+for word in allWords[:3]:   
+    print(word.orth_)
+    
+# it got it! Queen!
+
+{% endhighlight %}
 
 ----------------------------
 

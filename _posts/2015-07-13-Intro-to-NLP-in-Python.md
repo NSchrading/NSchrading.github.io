@@ -11,11 +11,11 @@ comments: false
 
 # Note
 
-You can access the Ipython notebook code [here](https://github.com/NSchrading/intro-python-nlp). This is intended to be run in an Ipython notebook, but the code can be copied and pasted into a python interpreter and it should work as well. Follow the readme on the github page above to get the dependencies required to run this code.
+You can access the Ipython notebook code [here](https://github.com/NSchrading/intro-python-nlp){:target="_blank"}. This is intended to be run in an Ipython notebook, but the code can be copied and pasted into a python interpreter and it should work as well. Follow the readme on the github page above to get the dependencies required to run this code.
 
-This tutorial is intended as a way for people with some experience with the concepts of machine learning and natural language processing to get started doing experiments in Python. If you are a complete beginner, you may be confused about terms like [tokenization](https://en.wikipedia.org/wiki/Tokenization_%28lexical_analysis%29), [stoplisting](https://en.wikipedia.org/wiki/Stop_words), [lemmatization](https://en.wikipedia.org/wiki/Lemmatization), and [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine). For a good introduction to machine learning, take Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning/home/info). For a more in-depth introduction to NLP in Python see [NLTK's book](http://www.nltk.org/book/). 
+This tutorial is intended as a way for people with some experience with the concepts of machine learning and natural language processing to get started doing experiments in Python. If you are a complete beginner, you may be confused about terms like [tokenization](https://en.wikipedia.org/wiki/Tokenization_%28lexical_analysis%29){:target="_blank"}, [stoplisting](https://en.wikipedia.org/wiki/Stop_words){:target="_blank"}, [lemmatization](https://en.wikipedia.org/wiki/Lemmatization){:target="_blank"}, and [SVMs](https://en.wikipedia.org/wiki/Support_vector_machine){:target="_blank"}. For a good introduction to machine learning, take Andrew Ng's [Coursera course](https://www.coursera.org/learn/machine-learning/home/info){:target="_blank"}. For a more in-depth introduction to NLP in Python see [NLTK's book](http://www.nltk.org/book/){:target="_blank"}. 
 
-NLTK is not the best tool for serious NLP. It is primarily a learning resource. For an excellent production-ready NLP tool see [spaCy](https://honnibal.github.io/spaCy/). I have written a tutorial for spaCy natural language processing [here]({{ site.url }}{{ site.baseurl }}project/Intro-to-NLP-with-spaCy/).
+NLTK is not the best tool for serious NLP. It is primarily a learning resource. For an excellent production-ready NLP tool see [spaCy](https://honnibal.github.io/spaCy/){:target="_blank"}. I have written a tutorial for spaCy natural language processing [here]({{ site.url }}{{ site.baseurl }}project/Intro-to-NLP-with-spaCy/){:target="_blank"}.
 
 # Basic Text Processing in Python
 
@@ -140,24 +140,36 @@ print(str2)
 print(str1[1:])
 print(str1[1:] == str1[1:len("immutable"):1])
 
-# beginning of string
-print(str1[0])
-
-# negative values gives end of string
-print(str1[-1])
-
-# the start index is INCLUSIVE but the end index is EXCLUSIVE
-print(str1[4:8])
-
 {% endhighlight %}
 
 > mmutable
 
 > True
 
+{% highlight python %}
+
+# beginning of string
+print(str1[0])
+
+{% endhighlight %}
+
 > i
 
+{% highlight python %}
+
+# negative values gives end of string
+print(str1[-1])
+
+{% endhighlight %}
+
 > e
+
+{% highlight python %}
+
+# the start index is INCLUSIVE but the end index is EXCLUSIVE
+print(str1[4:8])
+
+{% endhighlight %}
 
 > tabl
 

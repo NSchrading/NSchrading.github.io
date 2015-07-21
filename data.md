@@ -166,6 +166,10 @@ If you use this code, the text provided (Tweet.text) will still have hashtags, a
 
 # collects data from the publicly released data file
 import json
+from twython import Twython
+
+# enter your APP_KEY and ACCESS_TOKEN from your Twitter API account here
+twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
 
 class Tweet():
     # A container class for tweet information
