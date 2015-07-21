@@ -239,7 +239,7 @@ def collectTwitterData(twitter):
 
 ### Data Cleanliness
 
-Not every instnace actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. An annotation study on 1000 random instances from the data was conducted with 4 annotators. The following chart shows the resulting distribution of classes in this data:
+Not every instance actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. An annotation study on 1000 random instances from the data was conducted with 4 annotators. The following chart shows the resulting distribution of classes in this data:
 
 ![alt text]({{ site.baseurl }}/assets/images/tweet_data.png "Class distribution in Tweet Data")
 
