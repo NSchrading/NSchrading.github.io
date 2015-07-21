@@ -49,4 +49,5 @@ I designed and developed the image processing unit onboard the aircraft. This in
 
 We showcased our project at the [Imagine RIT Innovation and Creativity Festival](https://www.rit.edu/imagine/){:target="_blank"} and entered into the ARM Student Design Contest. The Danger Ranger won the [Paychex Sponsor Award](https://www.rit.edu/imagine/sponsor_awards_2015.php){:target="_blank"} and the ARM 
 Design Contest [Popular Vote](https://www.rit.edu/imagine/planyourday15/exhibit.php?id=601){:target="_blank"}.
+
 {% include image.html url="/media/2015-05-21-danger-ranger/danger_ranger_win.jpeg" description="Receiving the Paychex Sponsor Award at the Imagine RIT Innovation and Creativity Festival." %}
