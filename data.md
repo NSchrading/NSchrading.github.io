@@ -267,6 +267,7 @@ Additionally, the following subreddits were collected from and used as a held ou
 
 Download the entire reddit database from my public dropbox [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0){:target="_blank"}.
 Download the "shelved" sets of reddit data from my public dropbox [here](https://www.dropbox.com/s/zsncys6m2hhqpi9/reddit_data_shelves.7z?dl=0){:target="_blank"}.
+Download the "shelved" abuse classifier trained on the uneven set of data [here](https://www.dropbox.com/s/ehut622z4371yyb/abuseClassifier.7z?dl=0){:target="_blank"}.
 
 ### Format
 
@@ -339,6 +340,21 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
 * ***redditRelationshipsData*** This data contains all relationship and relationship_advice submissions with at least 1 comment.
     * data: A list of submission title, text, and comment data concatenated together.
     * subIds: A list of reddit submission ids, 1 entry per submission.
+
+The shelved classifier is a scikit-learn [Pipeline](http://scikit-learn.org/stable/modules/pipeline.html){:target="_blank"} consisting of [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html){:target="_blank"} with a custom tokenizer, followed by a [LinearSVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html){:target="_blank"}. Its key in the shelf is "classifier". To predict whether text is abuse or non-abuse, simply call the predict() function given a list of text. For example:
+
+{% highlight python %}
+
+shelf = shelve.open("abuseClassifier")
+classifier = shelf['classifier']
+shelf.close()
+print(classifier.predict(["I was abused and hit and I was sad :(", "I am happy and stuff. Love you!"]))
+
+{% endhighlight %}
+
+> ['abuse' 'non_abuse']
+
+Note that to use these shelved objects, you may need to use Python 3, not 2.
 
 <section id="terms"></section>
 
