@@ -266,7 +266,9 @@ Additionally, the following subreddits were collected from and used as a held ou
 ### Download
 
 Download the entire reddit database from my public dropbox [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0){:target="_blank"}.
+
 Download the "shelved" sets of reddit data from my public dropbox [here](https://www.dropbox.com/s/zsncys6m2hhqpi9/reddit_data_shelves.7z?dl=0){:target="_blank"}.
+
 Download the "shelved" abuse classifier trained on the uneven set of data [here](https://www.dropbox.com/s/ehut622z4371yyb/abuseClassifier.7z?dl=0){:target="_blank"}.
 
 ### Format
