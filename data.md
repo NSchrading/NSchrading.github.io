@@ -329,9 +329,12 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
     * commData: A dictionary, where the key is a reddit submission id and the value is a list of comments in that submission.
     * commLabels: A dictionary, where the key is a reddit submission id and the value is a list of labels given to the comments (abuse or non_abuse)
 * ***redditAbuseOnlyNgrams*** This data contains a larger set of even data (1336 submissions per class), with no semantic roles or predicates. It has the variables:
-    * data: A list of submission titles and text concatenated, 1 entry per submission.
-    * labels: A list of labels (abuse or non_abuse), 1 entry per submission.
-    * subIds: A list of reddit submission ids, 1 entry per submission.
+    * XTrain: A list of submission title and text concatenated together, 90% training size (1202 per class).
+    * XTest: A list of submission title and text concatenated together, 10% testing size (134 per class).
+    * labelsTrain: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * labelsTest: A list of labels (abuse or non_abuse), 1 entry per submission.
+    * subIdsTrain: A list of reddit submission ids, 1 entry per submission.
+    * subIdsTest: A list of reddit submission ids, 1 entry per submission.
 * ***redditAbuseUneven*** This data is an uneven set of data with 1336 abuse submissions and 17020 non-abuse submissions. It has the variables:
     * XTrain: A list of submission title, text, and comment data concatenated together, 85% training size.
     * XTest: A list of submission title, text, and comment data concatenated together, 15% testing size.
