@@ -129,28 +129,30 @@ a {
     </div>
 </div>
 
-This page contains links to data I have collected for my thesis. You are welcome to use any of this data for your research, but please cite the relevant paper and follow the [terms of use](#terms) if you do so.
+This page contains links to data I have collected for my thesis on [Analyzing Domestic Abuse using Natural Language Processing on Social Media Data]({{ site.baseurl }}/project/thesis/). You are welcome to use any of this data for your research, but please cite the relevant paper and follow the [terms of use](#terms) if you do so. 
+
+Please read the papers first before contacting me with questions.
 
 <section id="twitter"></section>
 
 # \#WhyIStayed / \#WhyILeft Research Data
 
-In September 2014, Twitter users unequivocally reacted to the Ray Rice assault scandal by unleashing personal stories of domestic abuse via the hashtags \#WhyIStayed or \#WhyILeft. This study explored at a macro-level firsthand accounts of domestic abuse from a corpus of tweeted instances designated with these tags to seek insights into the reasons victims give for staying in vs. leaving abusive relationships. A classifier that discriminates between the two hashtags was created, achieving 82% accuracy (50% is the binary baseline using an even dataset).
+Twitter users unequivocally reacted to the Ray Rice assault scandal by unleashing personal stories of domestic abuse via the hashtags \#WhyIStayed or \#WhyILeft. In [Schrading et al. (2015a)]({{ site.baseurl }}/project/WhyIStayed-WhyILeft/) we explored at a macro-level firsthand accounts of domestic abuse from a corpus of tweeted instances designated with these tags to seek insights into the reasons victims give for staying in vs. leaving abusive relationships.
 
 ### Download
 
-Download this data from my public dropbox [here](https://www.dropbox.com/s/n4fp4sq572422ex/stayedLeftData.json.7z?dl=0){:target="_blank"}.
+Download the extended dataset [here](https://www.dropbox.com/s/n4fp4sq572422ex/stayedLeftData.json.7z?dl=0){:target="_blank"}.
 
 ### Format
-Twitter restricts public sharing of tweets to only tweet ids. Therefore the format of the data is as follows:
+Twitter restricts public sharing of tweets to only tweet ids. Accordingly, the format of the data is as follows:
 
 * An individual instance is on a new line of the file.
 * Each instance is encoded as JSON.
-* Some tweets were split into multiple parts if they contained both hashtags - one part for the \#WhyIStayed reason and one part for the \#WhyILeft reason. Only a single tweet in the dataset needed to be split into 4s, but logic handled this case as well.
+* Some tweets were split automatically with regexes if they contained both hashtags - one part for the \#WhyIStayed reason and one part for the \#WhyILeft reason. Only a single tweet in the dataset needed to be split into 4s, but logic handled this case as well.
 * Each instance has the properties ***id***, ***label***, ***startIdx***, and ***endIdx***
     * ***id***: The unique identifier of the tweet.
-    * ***label***: The ground truth label this instance was given, either \#WhyIStayed or \#WhyILeft, based off of the hashtag used.
-    * ***startIdx***: If the tweet was split into multiple parts, this is the starting index into the tweet text related to the current label. If the tweet was not split this is null.
+    * ***label***: The gold standard label this instance was given, either \#WhyIStayed or \#WhyILeft, based off of the hashtag used.
+    * ***startIdx***: If the tweet was split into multiple parts, this is the starting index into the tweet text for the current label. If the tweet was not split this is null.
     * ***endIdx***: If the tweet was split into multiple parts, this is the index into the tweet text at which the instance ends. If the tweet was not split this is null.
 
 ### Getting the tweet text and additional information using Twitter's API
@@ -160,7 +162,7 @@ In order to gather the tweet text and additional information about the tweet, li
 #### Important
 To use this code, you ***must*** have Twython installed. Installation instructions, and how to set up a Twitter API account are on [Twython's githup page](https://github.com/ryanmcgrath/twython){:target="_blank"}.
 
-If you use this code, the text provided (Tweet.text) will still have hashtags, and is uncleaned. You will want to remove hashtags, and probably do standard cleaning procedures like lowercasing, lemmatizing, and stoplisting.
+If you use this code, the text provided (Tweet.text) will still have hashtags, and is uncleaned and unprocessed.
 
 {% highlight python %}
 
@@ -237,43 +239,42 @@ def collectTwitterData(twitter):
 
 {% endhighlight %}
 
-### Data Cleanliness
+### Data Information
 
-Not every instance actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. An annotation study on 1000 random instances from the data was conducted with 4 annotators. The following chart shows the resulting distribution of classes in this data:
+Not every instance actually contains a reason for staying or leaving. Some may be sympathizing with those sharing, or reflecting on the trend itself. Others may be ads or jokes. The following chart shows the distribution of such classes in a random sample of 1000 instances. More information is in the paper.
 
 ![alt text]({{ site.baseurl }}/assets/images/tweet_data.png "Class distribution in Tweet Data")
 
-> According to the annotations in this random sample, on average 36% of the instances are reasons for staying (S), 44% are reasons for leaving (L), 12% are meta comments (M), 2% are jokes (J), 2% are ads (A), and 4%  do not match prior categories (O).
+> A = ads , J = jokes, L = reasons for leaving, M = meta commentary, O = other , S = reasons for staying, annotated by annotators A1-A4, with #L and #S being the assigned gold standard labels.
 
 <section id="reddit"></section>
 
 # Reddit Domestic Abuse Research Data
 
-This data was used to create a general classifier to find text describing domestic abuse. Analysis of this data can reveal the general dynamics of domestic abuse, and can be used to study how online users discuss abuse. Discourse studies between submitters and commenters could be a very interesting experiment to conduct. Other studies on relationships and advice seeking behavior on Reddit could also be conducted. The following subreddits were collected from:
+Some of this dataset was used in Schrading et al. (2015b) to study the dynamics of domestic abuse. Submissions and comments from the following subreddits were collected, and assigned a binary reference label (*abuse* or *non-abuse*) based on the subreddit title:
 
 |                     | abuseinterrupted | domesticviolence | survivorsofabuse | casualconversation | advice    | anxiety   | anger     |
 |-------------------- | ---------------- | ---------------- | ---------------- | ------------------ | --------- | --------- | --------- |
 | gold standard label | abuse            | abuse            | abuse            | non abuse          | non abuse | non abuse | non abuse |
 | num submissions collected | 1653             | 749              | 512              | 7286               | 5913      | 4183      | 837       |
 
-Additionally, the following subreddits were collected from and used as a held out set. Annotators annotated to determine the precision of the abuse classifier.
+Additional subreddit data were also collected and used to examine classification in unused subreddits:
 
 |                           | relationships | relationship_advice |
 | ------------------------- | ------------- | ------------------- |
-| gold standard label       | unclassified  | unclassified        |
 | num submissions collected | 8201          | 5874                |
 
 ### Download
 
-Download the entire reddit database from my public dropbox [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0){:target="_blank"}.
+Download the entire reddit database [here](https://www.dropbox.com/s/1iqf9tx2s5rxdcr/new_reddit.db.7z?dl=0){:target="_blank"}.
 
-Download the "shelved" sets of reddit data from my public dropbox [here](https://www.dropbox.com/s/zsncys6m2hhqpi9/reddit_data_shelves.7z?dl=0){:target="_blank"}.
+Download the "shelved" sets of reddit data [here](https://www.dropbox.com/s/zsncys6m2hhqpi9/reddit_data_shelves.7z?dl=0){:target="_blank"}.
 
 Download the "shelved" abuse classifier trained on the uneven set of data [here](https://www.dropbox.com/s/ehut622z4371yyb/abuseClassifier.7z?dl=0){:target="_blank"}.
 
 ### Format
 
-There are two formats for the Reddit data. The most flexible for researchers is the entire database used to store all the data I collected. You will have to use sqlite to access the database ([Python has an API](https://docs.python.org/2/library/sqlite3.html){:target="_blank"} for interacting with sqlite databases). For those who do not wish to interact with the database and simply want to access the datasets used in my experiments, I have provided [shelved](https://docs.python.org/2/library/shelve.html){:target="_blank"} data files for use in Python.
+There are two formats for the Reddit data. The most flexible is the entire database used to store all the data I collected. You will have to use sqlite to access the database ([Python has an API](https://docs.python.org/2/library/sqlite3.html){:target="_blank"} for interacting with sqlite databases). For those who do not wish to interact with the database but want to access the provided datasets used in my experiments, I have provided [Python shelved](https://docs.python.org/2/library/shelve.html){:target="_blank"} data files for use in Python.
 
 The sqlite database named "new_reddit.db" has 3 tables within: ***submissions***, ***comments***, and ***submission_srls***. Their columns are as follows:
 
@@ -288,7 +289,7 @@ The sqlite database named "new_reddit.db" has 3 tables within: ***submissions***
 * ***score*** - The score of the submission as determined by Reddit.
 * ***num_comments*** - The number of comments within the submission.
 * ***created_utc*** - The UTC time at which the submission was created.
-* ***link_flair*** - Any special flair that the user or moderators applied to this submission. Can be None or blank.
+* ***link_flair*** - Any 'flair' that the user or moderators applied to this submission. Can be None or blank.
 * ***sentiment*** - The overall sentiment of the submission as calculated by [VADER](https://github.com/cjhutto/vaderSentiment){:target="_blank"}.
 
 #### Comments table
@@ -304,7 +305,6 @@ The sqlite database named "new_reddit.db" has 3 tables within: ***submissions***
 * ***score*** - The score of the comment as determined by Reddit.
 * ***created_utc*** - The UTC time at which the submission was created.
 * ***sim_score*** - The cosine similarity of the comment's text to the submission's text.
-* ***label*** - Some comments may have been labeled as abuse or non_abuse in experiments. If they were, this is their label as assigned by a classifier. May be incorrect, and should not be considered ground truth.
 * ***sentiment*** - The overall sentiment of the comment as calculated by [VADER](https://github.com/cjhutto/vaderSentiment){:target="_blank"}.
 
 #### Submission_srls table
@@ -315,11 +315,11 @@ The sqlite database named "new_reddit.db" has 3 tables within: ***submissions***
 * ***text_slice*** - The text that the role is associated with.
 * ***start*** - The start index of the text slice.
 * ***end*** - The end index of the text slice.
-* ***predicate_sense_num*** - The sense number of the predicate as determined by the [Illinois Curator](http://cogcomp.cs.illinois.edu/page/software_view/Curator){:target="_blank"}.
+* ***predicate_sense_num*** - The sense number of the predicate by the [Illinois Curator](http://cogcomp.cs.illinois.edu/page/software_view/Curator){:target="_blank"}.
 
-The shelved files provided are as follows (note that lists are aligned e.g. submissionId lists align with the submissions in data lists):
+The shelved files provided are as follows (note that lists are aligned e.g. submissionId lists align with the submissions in data lists. Also note that a submission is the initial post, and comments are linked to it by the associated submission ID):
 
-* ***redditAbuseSubmissions*** This data is an even set of 552 abuse submissions and 552 non-abuse submissions. Each submission has been parsed by the Illinois Curator for Semantic Role Labels. It has the variables:
+* ***redditAbuseSubmissions*** This data is an even set of 552 *abuse* submissions and 552 *non-abuse* submissions. Each submission has been parsed by the Illinois Curator for Semantic Role Labels. It has the variables:
     * data: A list of submission titles and text concatenated, 1 entry per submission.
     * labels: A list of labels (abuse or non_abuse), 1 entry per submission.
     * subIds: A list of reddit submission ids, 1 entry per submission.
@@ -327,7 +327,7 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
     * predicates: A list of lists. Each inner list is a tuple of (predicates, sense number) in a submission. 1 list per submission.
 * ***redditAbuseComments*** This data contains all the comments within the submissions in the small even set of submissions. It has the variables:
     * commData: A dictionary, where the key is a reddit submission id and the value is a list of comments in that submission.
-    * commLabels: A dictionary, where the key is a reddit submission id and the value is a list of labels given to the comments (abuse or non_abuse)
+    * commLabels: A dictionary, where the key is a reddit submission id and the value is a list of labels given to the comments (abuse or non_abuse).
 * ***redditAbuseOnlyNgrams*** This data contains a larger set of even data (1336 submissions per class), with no semantic roles or predicates. It has the variables:
     * XTrain: A list of submission title and text concatenated together, 90% training size (1202 per class).
     * XTest: A list of submission title and text concatenated together, 10% testing size (134 per class).
@@ -335,7 +335,7 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
     * labelsTest: A list of labels (abuse or non_abuse), 1 entry per submission.
     * subIdsTrain: A list of reddit submission ids, 1 entry per submission.
     * subIdsTest: A list of reddit submission ids, 1 entry per submission.
-* ***redditAbuseUneven*** This data is an uneven set of data with 1336 abuse submissions and 17020 non-abuse submissions. It has the variables:
+* ***redditAbuseUneven*** This data is an uneven set of data with 1336 *abuse* submissions and 17020 *non-abuse* submissions. It has the variables:
     * XTrain: A list of submission title, text, and comment data concatenated together, 85% training size.
     * XTest: A list of submission title, text, and comment data concatenated together, 15% testing size.
     * labelsTrain: A list of labels (abuse or non_abuse), 1 entry per submission.
@@ -346,7 +346,7 @@ The shelved files provided are as follows (note that lists are aligned e.g. subm
     * data: A list of submission title, text, and comment data concatenated together.
     * subIds: A list of reddit submission ids, 1 entry per submission.
 
-The shelved classifier is a scikit-learn [Pipeline](http://scikit-learn.org/stable/modules/pipeline.html){:target="_blank"} consisting of [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html){:target="_blank"} with a custom tokenizer, followed by a [LinearSVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html){:target="_blank"}. Its key in the shelf is "classifier". To predict whether text is abuse or non-abuse, simply call the predict() function given a list of text. For example:
+The shelved classifier is a scikit-learn [Pipeline](http://scikit-learn.org/stable/modules/pipeline.html){:target="_blank"} consisting of [TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html){:target="_blank"} with a custom tokenizer, followed by a [LinearSVC](http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html){:target="_blank"}. Its key in the shelf is "classifier". To predict whether text is *abuse* or *non-abuse*, call the predict() function given a list of text. For example:
 
 {% highlight python %}
 
@@ -357,7 +357,7 @@ print(classifier.predict(["I was abused and hit and I was sad :(", "I am happy a
 
 {% endhighlight %}
 
-> ['abuse' 'non_abuse']
+> ['abuse', 'non_abuse']
 
 Note that to use these shelved objects, you may need to use Python 3, not 2.
 
@@ -367,7 +367,7 @@ Note that to use these shelved objects, you may need to use Python 3, not 2.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-Twitter paper:
+Twitter paper, Schrading et al. (2015a):
     
 [\#WhyIStayed, \#WhyILeft: Microblogging to Make Sense of Domestic Abuse](http://anthology.aclweb.org/N/N15/N15-1139.pdf){:target="_blank"}
 
@@ -382,3 +382,7 @@ Twitter paper:
       pages     = {1281--1286},
       url       = {http://www.aclweb.org/anthology/N15-1139}
     }
+
+Reddit paper, Schrading et al. (2015b):
+
+    To appear at EMNLP 2015.
